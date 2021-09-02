@@ -1,4 +1,5 @@
-## Welcome to GitHub Pages
+## Welcome
+### Tutorial of brachytherapy simulations using TOPAS
 
 You can use the [editor on GitHub](https://github.com/fberumenm/TOPAS_tutorial_brachytherapy/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 

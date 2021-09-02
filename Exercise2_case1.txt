@@ -1,0 +1,42 @@
+# ------------------------------------------------- #
+#               Exercise 2: Test case 1             #
+# ------------------------------------------------- #
+includeFile = Exercise2_TG186source.txt
+
+b:Gr/Enable           = "F"
+b:Ts/PauseBeforeQuit  = "F"
+
+###### 51.1 cm side water cube #######
+d:Ge/World/HLX = 25.55 cm
+d:Ge/World/HLY = 25.55 cm
+d:Ge/World/HLZ = 25.55 cm
+s:Ge/World/Material = "G4_WATER"
+
+i:So/Source/NumberOfHistoriesInRun = 10000
+
+# ------------------------------------------------- #
+#                      Scorer                       #
+# ------------------------------------------------- #
+
+s:Ge/DoseGrid/Type       = "TsBox"
+s:Ge/DoseGrid/Parent     = "World"
+d:Ge/DoseGrid/HLX        =  10.05 cm
+d:Ge/DoseGrid/HLY        =  10.05 cm
+d:Ge/DoseGrid/HLZ        =  10.05 cm
+s:Ge/DoseGrid/Color      =  "red"
+b:Ge/DoseGrid/IsParallel = "T"
+i:Ge/DoseGrid/XBins      = 201
+i:Ge/DoseGrid/YBins      = 201
+i:Ge/DoseGrid/ZBins      = 201
+
+s:Sc/DoseScorer/Quantity                   = "DoseToMedium"
+sv:Sc/DoseScorer/Report                    = 1 "Sum"
+s:Sc/DoseScorer/Component                  = "DoseGrid"
+b:Sc/DoseScorer/OutputToConsole            = "F"
+s:Sc/DoseScorer/IfOutputFileAlreadyExists  = "Increment"
+s:Sc/DoseScorer/OutputType                 = "DICOM"
+b:Sc/DoseScorer/DICOMOutput32BitsPerPixel  = "True"
+s:Sc/DoseScorer/OutputFile                 = "Case1_TOPAS"
+sv:Sc/DoseScorer/OnlyIncludeParticlesNamed = 1 "gamma"
+
+

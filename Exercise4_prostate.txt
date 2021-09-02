@@ -1,0 +1,104 @@
+# ====================================================== #
+#             PROSTATE CASE - TOPAS VALIDATION           #
+# ====================================================== #
+
+includeFile = TG186Materials.txt
+includeFile = Exercise4_TG186source.txt
+
+i:Tf/NumberOfSequentialTimes = 10
+
+b:Gr/Enable           = "F"
+b:Ts/PauseBeforeQuit  = "F"
+b:Ts/DumpParameters   = "F"
+
+##### WORLD #####
+d:Ge/World/HLX = 40 cm
+d:Ge/World/HLY = 40 cm
+d:Ge/World/HLZ = 40 cm
+s:Ge/World/Material = "G4_WATER"
+
+sv:Ph/Default/Modules = 1 "g4em-standard_opt4"
+sv:Ph/Default/LayeredMassGeometryWorlds =  1 "CapsuleWorld" 
+
+# ====================================================== #
+#                        PATIENT                         #
+# ====================================================== #
+
+##### DICOM PATIENT ##### 
+#s:Ge/PatientGroup/Type   = "Group"
+#s:Ge/PatientGroup/Parent = "World"
+
+#s:Ge/Patient/Parent = "PatientGroup"
+#s:Ge/Patient/Material = "G4_WATER"
+#d:Ge/Patient/TransX   = 0. mm
+#d:Ge/Patient/TransY   = 0. mm
+#d:Ge/Patient/TransZ   = 0. mm
+#d:Ge/Patient/RotX     = 0. deg #180. deg
+#d:Ge/Patient/RotY     = 0. deg
+#d:Ge/Patient/RotZ     = 0. deg
+
+#s:Ge/Patient/Type                = "TsDicomPatient"
+#s:Ge/Patient/DicomDirectory      = "./NewCT"
+#sv:Ge/Patient/DicomModalityTags  = 1 "CT"
+#s:Ge/Patient/CloneRTDoseGridFrom = "RDHigh.dcm"
+#b:Ge/Patient/IgnoreInconsistentFrameOfReferenceUID = "F"
+
+#### TG186 Material Assignment
+#s:Ge/Patient/ImagingToMaterialConverter = "MaterialTagNumber"
+
+#iv:Ge/Patient/MaterialTagNumbers = 7 0 1 2 3 4 5 6 
+#sv:Ge/Patient/MaterialNames = 7 "TG186Water" "TG186Water" "TG186CorticalBone" "TG186MeanMaleSoftTissue" "TG186Prostate"  "Air" "TG186MeanMaleSoftTissue" 
+####
+
+#i:Gr/ShowOnlyOutlineIfVoxelCountExceeds = 1000000000
+
+# Set to -1 to show only center slice.  Set to -2 to show first, center and last slice.
+
+#iv:Ge/Patient/ShowSpecificSlicesX = 1 -1
+
+#iv:Ge/Patient/ShowSpecificSlicesY = 1 -1  
+
+#iv:Ge/Patient/ShowSpecificSlicesZ = 1 -2
+
+
+# ====================================================== #
+#      TIME FEATURES: DWELL POSITIONS AND "TIMES"        #
+# ====================================================== #
+
+d:Ge/Capsule/TransX = Tf/PositionX/Value - 37.8 mm
+d:Ge/Capsule/TransY = Tf/PositionY/Value - 66.8 mm
+d:Ge/Capsule/TransZ = Tf/PositionZ/Value + 688 mm
+
+d:Tf/TimelineEnd = 10 ms
+i:Tf/Verbosity   = 2
+
+s:Tf/Histories/Function = "Step"
+dv:Tf/Histories/Times   = 1 10 ms
+iv:Tf/Histories/Values  = 1 10
+
+s:Tf/HistoriesWeight/Function = "Step"
+dv:Tf/HistoriesWeight/Times   = 10 1 2 3 4 5 6 7 8 9 10 ms
+
+##### Proportional to dwell times #####
+iv:Tf/HistoriesWeight/Values  = 10 222 77 54 35 215 38 223 319 263 110
+i:Tf/HistoriesProportionalToDwellTimes/Value = Tf/HistoriesWeight/Value * Tf/Histories/Value
+i:So/Source/NumberOfHistoriesInRun = Tf/HistoriesProportionalToDwellTimes/Value
+
+##### X translation #####
+s:Tf/PositionX/Function           = "Step"
+dv:Tf/PositionX/Times             = 10 1 2 3 4 5 6 7 8 9 10 ms
+dv:Tf/PositionX/Values            = 10 43.42 43.68 43.78 43.97 44.13 44.42 44.76 51.77 51.93 51.86 mm
+d:Tf/PositionX/RepetitionInterval = 10 ms
+
+##### Y translation #####
+s:Tf/PositionY/Function           = "Step"
+dv:Tf/PositionY/Times             = 10 1 2 3 4 5 6 7 8 9 10 ms
+dv:Tf/PositionY/Values            = 10 57.08 58.19 59.59 60.89 62.38 63.81 66.75 64.54 66.08 68.43 mm
+d:Tf/PositionY/RepetitionInterval = 10 ms
+
+##### Z translation #####
+s:Tf/PositionZ/Function           = "Step"
+dv:Tf/PositionZ/Times             = 10 1 2 3 4 5 6 7 8 9 10 ms
+dv:Tf/PositionZ/Values            = 10 -685.88 -690.75 -695.52 -700.31 -705.08 -709.86 -719.38 -679.94 -684.7 -694.36 mm
+d:Tf/PositionZ/RepetitionInterval = 10 ms
+

@@ -1,16 +1,4 @@
-### Monte Carlo Simulations for Brachytherapy using the TOPAS toolkit
-_Overview_ 
-
-Monte Carlo (MC) techniques use randomized mathematical methods to determine estimates of numerical quantities according to appropriate probability distributions and rules. In the specific case of radiation transport, mechanisms of radiation interaction with matter are governed by probability distributions. More precisely, discrete interaction processes are described by the relevant cross sections. In that sense, the MC method is fully applicable to radiation transport problems. 
-
-In the field of medical physics, the MC method is mostly used to study the interaction of radiation with the patient, imaging devices, treatment sources/units, and radiation detectors. In such a way, simple parallel photom beam interacting in a water cube phantom, and it can to a complex radiation therapy machine such as a linear accelerator. 
-
-
-The MC.  imaging devices.sed to simulate the interaction and transport of particles with the treatment apparatus, the patient, or imaging devices. While the MC method offers high accuracy, it is often too computationally expensive for routine clinical use. Nevertheless, over the past decades, MC simulations have played a major role in many developments1
-
-
-[^fn]: 
-
+### Tutorial of brachytherapy simulations using TOPAS
 [TOPAS](http://www.topasmc.org/) is a toolkit that performs advanced Monte Carlo simulations of all forms of radiation therapy setups. The volumetric source enables accurate brachytherapy simulations. The TOPAS version 3.7 includes a brachytherapy package of source models and a track-lenght estimator for dose scoring [(link)](https://topas.readthedocs.io/en/latest/examples-docs/Brachytherapy/index.html). This tutorial gives some insights on how the sources are modeled and some common simulation setups (TG-43 parameters, MBDCA test case 1). Additionally, the TOPAS Time Feature System is described and used to simulate a prostate case.
 
 For any presentation or publication using the track-length estimator or brachytherapy related calculation, please cite the following published works:
@@ -19,8 +7,6 @@ For any presentation or publication using the track-length estimator or brachyth
 * Audran Poher, Francisco Berumen, Yunzhi Ma, Joseph Perl, and Luc Beaulieu. "Characterization of LDR brachytherapy sources using the TOPAS Monte Carlo toolkit", COMP annual meeting 2021.
 
 This tutorial has been developed by the [Medical Physics Research Group at Université Laval](https://physmed.fsg.ulaval.ca).
-
-
 
 #### Introduction to TOPAS and example 1 (cylindrical volumetric source)
 <p align="center">

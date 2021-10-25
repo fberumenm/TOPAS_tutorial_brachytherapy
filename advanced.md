@@ -3,5 +3,5 @@ title: Advanced examples
 filename: advanced
 --- 
 
-### Test
+### Advanced examples
 This is simple test

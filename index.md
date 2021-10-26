@@ -5,7 +5,7 @@ Monte Carlo (MC) techniques use randomized mathematical methods to determine est
 
 In the field of medical physics, the MC method is mostly used to study the interaction of radiation with the patient, imaging devices, treatment sources/units, and radiation detectors. In such a way, complex scenarios can be simulated. This educational resources are focused on brachytherapy, a form of radiation therapy in which sealed sources are inserted into the patient to closely treat lesions.
 
-[TOPAS](http://www.topasmc.org/) is a toolkit that performs advanced Monte Carlo simulations of all forms of radiation therapy setups. TOPA
+[TOPAS](http://www.topasmc.org/) is a toolkit that performs advanced Monte Carlo simulations of all forms of radiation therapy setups. The toolkit allows users to set up complex simulations through simple text files which in turn indicate a series of parameters. This parameter system is fully described in the [TOPAS official documentation](https://topas.readthedocs.io/en/latest/getting-started/intro.html) site. 
 
 
 The volumetric source enables accurate brachytherapy simulations. The TOPAS version 3.7 includes a brachytherapy package of source models and a track-lenght estimator for dose scoring [(link)](https://topas.readthedocs.io/en/latest/examples-docs/Brachytherapy/index.html). This tutorial gives some insights on how the sources are modeled and some common simulation setups (TG-43 parameters, MBDCA test case 1). Additionally, the TOPAS Time Feature System is described and used to simulate a prostate case.

@@ -1,5 +1,4 @@
-### Advanced examples
-_Mutisource_
+### Multisource example
 
  In the [brachytherapy package for TOPAS](https://topas.readthedocs.io/en/latest/examples-docs/Brachytherapy/index.html), single-seed geometries are presented as separated files. Such files can be used as a template to generate the parameters for a multi-seed brachytherapy implant. 
  
@@ -24,35 +23,26 @@ d:Ge/GroupOfSeeds/TransZ            = {2} mm
 """.format(TransX,TransY,TransZ))
 
 ```
-
+The next step is to generate the parameters defining the seeds.  As before, we need to define the positional arguments of the string.format method to account for the seed position (x,y,z), and the seed number. Particularly, consider only the parameters of the Titanium Tube. Note that the full list of parameters should follow a similar structure.
 
 
 ```python
-# Create an array with the seeds positions 
-PosX = np.arange(start = 1, stop = 11, step = 1)
-PosY = np.arange(start = 1, stop = 11, step = 1)
-PosZ = np.arange(start = 1, stop = 11, step = 1)
+# Number of seeds
+seeds = 3
 
-# Print parameters in the file
-print("""
-# ====================================================== #
-#                Iodine 125 - SelectSeeds                #
-# ====================================================== #
-includeFile = ../../../SeedMaterials.txt
+# Create an array with the seeds positions
+# In this example, we used the vectors (1,1,1), (2,2,2), (3,3,3) 
+PosX = np.arange(start = 1, stop = 4, step = 1)
+PosY = np.arange(start = 1, stop = 4, step = 1)
+PosZ = np.arange(start = 1, stop = 4, step = 1)
+```
+Note that each seed is a group component itself and must follow the corrrect seed number indicator (iterable value or something similar).
 
-s:Ge/GroupOfSeeds/Type              = "Group"
-s:Ge/GroupOfSeeds/Parent            = "World"
-b:Ge/GroupOfSeeds/IsParallel        = "True"
-s:Ge/GroupOfSeeds/ParallelWorldName = "SeedsWorld"
-d:Ge/GroupOfSeeds/TransX            = {0} mm
-d:Ge/GroupOfSeeds/TransY            = {1} mm
-d:Ge/GroupOfSeeds/TransZ            = {2} mm
-""".format(TransX,TransY,TransZ),file=open(filename, "a"))
-
+```python
+# Print parameters of SelectSeed
+# Only the parameters of the Titanium tube are shown
 for i in range (seeds):
     print("""
-ic:So/ActiveSource{0}/NumberOfHistoriesInRun    = {4}   
-
 s:Ge/Seed{0}/Type              = "Group"
 s:Ge/Seed{0}/Parent            = "GroupOfSeeds"
 b:Ge/Seed{0}/IsParallel        = "True"
@@ -70,10 +60,13 @@ d:Ge/TitaniumTube{0}/RMax         = 0.4 mm
 d:Ge/TitaniumTube{0}/HL           = 1.85 mm
 d:Ge/TitaniumTube{0}/SPhi         = 0. deg
 d:Ge/TitaniumTube{0}/DPhi         = 360. deg
-s:Ge/TitaniumTube{0}/Color        = "transparentgray2"
 s:Ge/TitaniumTube{0}/DrawingStyle = "Solid"
 b:Ge/TitaniumTube{0}/IsParallel        = "True"
 s:Ge/TitaniumTube{0}/ParallelWorldName = "SeedsWorld"
 
+""".format(i,PosX[i],PosY[i],PosZ[i]))
 ```
+In conclusion, with the given parameter files which are included in the brachytherapy package for TOPAS, multi-seed simulations are possible by taking those files as a template and looping over for each seed position.
+
+
  

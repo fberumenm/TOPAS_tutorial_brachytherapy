@@ -4,6 +4,8 @@
 * Video 3: Best 2335 Pd-103 source, air-kerma strength, and dose-rate constant calculations
 * Video 4: Time Feature System and a prostate case
 
+TOPAS parameter files of discussed examples can be downloaded from this  [link](https://github.com/fberumenm/TOPAS_tutorial_brachytherapy).
+
 This tutorial has been developed by the [Medical Physics Research Group at Université Laval](https://physmed.fsg.ulaval.ca). For any presentation or publication using the track-length estimator or brachytherapy related calculation, please cite the following published works:
 
 * Francisco Berumen, Yunzhi Ma, José Ramos-Méndez, Joseph Perl, and Luc Beaulieu. "Validation of the TOPAS Monte Carlo toolkit for HDR brachytherapy simulations", Brachytherapy (2021) [(link)](https://doi.org/10.1016/j.brachy.2020.12.007)

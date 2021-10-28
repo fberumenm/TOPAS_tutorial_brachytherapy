@@ -35,7 +35,7 @@ For example, for a simulation with $$10^9$$ initial photons, isotope Ir-192, tre
 TOPASsum_dcm = get_dose_volume('myfile.dcm')
 TOPAS_Gy_photon = TOPASsum_dcm/10**9
 
-# Consider an Ir-192 isotope
+# Considering an Ir-192 isotope
 photon_per_Bq = 2.3
 TOPAS_Gy_Bqs = TOPAS_Gy_photon*photon_per_Bq
 

@@ -1,5 +1,5 @@
 # ====================================================== #
-#             PROSTATE CASE - TOPAS VALIDATION           #
+#              PROSTATE CASE - Exercise 4                #
 # ====================================================== #
 
 includeFile = TG186Materials.txt

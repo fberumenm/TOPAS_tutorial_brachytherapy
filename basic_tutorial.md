@@ -7,7 +7,7 @@
 ### Tutorial of brachytherapy simulations using TOPAS
 
 * Video 1: Introduction to TOPAS and the cylindrical volumetric source
-* Video 2: TG 186 source and the MBDCA-WG test case 1
+* Video 2: TG 186 source and the [MBDCA-WG test case 1](http://irochouston.mdanderson.org/rpc/BrachySeeds/Model_calculations.htm)
 * Video 3: Best 2335 Pd-103 source, air-kerma strength, and dose-rate constant calculations
 * Video 4: Time Feature System and a prostate case
 

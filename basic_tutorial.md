@@ -1,4 +1,11 @@
+<button onclick="window.location.href='https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/';">HOME</button>
+<button onclick="window.location.href='https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/basic_tutorial';">TUTORIAL</button>
+<button onclick="window.location.href='https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/multisource';">MULTISOURCE</button>
+<button onclick="window.location.href='https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/mc_tps';">MC vs TPS</button>
+<button onclick="window.location.href='https://github.com/fberumenm/TOPAS_tutorial_brachytherapy';">FILES</button>
+
 ### Tutorial of brachytherapy simulations using TOPAS
+
 * Video 1: Introduction to TOPAS and the cylindrical volumetric source
 * Video 2: TG 186 source and the MBDCA-WG test case 1
 * Video 3: Best 2335 Pd-103 source, air-kerma strength, and dose-rate constant calculations

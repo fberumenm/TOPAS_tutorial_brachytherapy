@@ -1,12 +1,10 @@
+<button onclick="window.location.href='https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/';">HOME</button>
+<button onclick="window.location.href='https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/basic_tutorial';">TUTORIAL</button>
+<button onclick="window.location.href='https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/multisource';">MULTISOURCE</button>
+<button onclick="window.location.href='https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/mc_tps';">MC vs TPS</button>
+<button onclick="window.location.href='https://github.com/fberumenm/TOPAS_tutorial_brachytherapy';">FILES</button>
+
 ### Monte Carlo Simulations for Brachytherapy using the TOPAS toolkit
-
-{% include button.html url="https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/" %}
-
-{% include button.html url="https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/basic_tutorial" %}
-
-{% include button.html url="https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/multisource" %}
-
-{% include button.html url="https://fberumenm.github.io/TOPAS_tutorial_brachytherapy/mc_tps" %}
 
 _Overview_ 
 

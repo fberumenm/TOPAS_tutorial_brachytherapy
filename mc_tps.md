@@ -21,7 +21,7 @@ $$TOPAS\ (Gy/s) = TOPAS\ (Gy/ U\ s) * S_K\_TPS\ (U),$$
 
 $$TOPAS\ (Gy) = TOPAS\ (Gy/s) * treatment\ time\ (s),$$
 
-where $I$ is the intensity given in photons per becquerel and its value depends on the isotope of the source. If the [Pydicom](https://pydicom.github.io/) library is used, the next piece of code shows how to scale a TOPAS RTDOSE DICOM file from Gy/photon to Gy.
+where $$I$$ is the intensity given in photons per becquerel and its value depends on the isotope of the source. If the [Pydicom](https://pydicom.github.io/) library is used, the next piece of code shows how to scale a TOPAS RTDOSE DICOM file from Gy/photon to Gy.
 
 First, load the needed libraries and define a function to read the DICOM file and scale it by the scaling factor attribute [(3004,000E)](https://dicom.innolitics.com/ciods/rt-dose/rt-dose/3004000e).
 

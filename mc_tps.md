@@ -9,8 +9,8 @@ $$
 TOPAS\ (Gy/Bq\ s) = TOPAS\ (Gy/photon) * I (photon/Bq\ s),
 $$
 
-$$TOPAS\ (Gy/\ U\s) =  TOPAS\ (Gy / Bq\ s) / S_K\_TOPAS (U / Bq),$$
+$$TOPAS\ (Gy/U\ s) =  \frac{TOPAS\ (Gy / Bq\ s)}{S_K\_TOPAS (U / Bq)},$$
 
-$$TOPAS\ (Gy/s) = TOPAS\ (Gy/ U s) * S_K\_TPS (U),$$
+$$TOPAS\ (Gy/s) = TOPAS\ (Gy/ U\ s) * S_K\_TPS\ (U),$$
 
 $$TOPAS\ (Gy) = TOPAS\ (Gy/s) * treatment\ time\ (s).$$

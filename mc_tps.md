@@ -28,4 +28,26 @@ def get_dose_volume(dicom_path):
     scaling_factor = float(dicom[0x3004, 0x000E].value)
     return dicom.pixel_array*scaling_factor
 ```
-Given a simulation with $$10^9$$ initial photons
+For example, for a simulation with $$10^9$$ initial photons, isotope Ir-192, treatment time of 10 s, and _Sum_ reported (for _Mean_ do not divide by the initial photons), the dose distribution in Gy is calculated as
+
+```python
+# Get volume in Gy/ph
+TOPASsum_dcm = get_dose_volume('myfile.dcm')
+TOPAS_Gy_photon = TOPASsum_dcm/10**9
+
+# Consider an Ir-192 isotope
+photon_per_Bq = 2.3
+TOPAS_Gy_Bqs = TOPAS_Gy_photon*photon_per_Bq
+
+# Use the calculated TOPAS air-kerma strength 
+S_K = 9.8*10**-8 #U/Bq
+TOPAS_Gy_Us = TOPAS_Gy_Bqs/S_K
+
+# Scale by the TPS air-kerma strength
+S_K_TPS = 40000 #U
+TOPAS_Gy_s = TOPAS_Gy_Us * S_K_TPS
+
+# Scale by the treatment time
+treatment_time = 10 #s
+TOPAS_Gy = TOPAS_Gy_s * treatment_time
+```

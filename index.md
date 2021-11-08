@@ -15,6 +15,8 @@ Monte Carlo (MC) techniques use randomized mathematical methods to determine est
 
 The TOPAS version 3.7 released a [brachytherapy package](https://topas.readthedocs.io/en/latest/examples-docs/Brachytherapy/index.html) of source models and a track-length estimator for dose scoring. Such package was developed by the [Medical Physics Research Group at Université Laval](https://physmed.fsg.ulaval.ca) and the given documentation explains in detail the included source models. This tutorial gives insights on how the sources are modeled and some common simulation setups (for example, the TG-43 parameters setup). Additionally, the TOPAS Time Feature System is described and used to simulate a prostate case. A couple of advanced examples (a multi-source setup, and a MC vs TPS comparison) are described as well. TOPAS parameter files of discussed examples can be downloaded from this  [link](https://github.com/fberumenm/TOPAS_tutorial_brachytherapy)
 
+**How to get your TOPAS license?** Register [here](http://www.topasmc.org/registration).
+
 For any presentation or publication using the track-length estimator or brachytherapy related calculation, please cite the following published works:
 
 * Francisco Berumen, Yunzhi Ma, José Ramos-Méndez, Joseph Perl, and Luc Beaulieu. "Validation of the TOPAS Monte Carlo toolkit for HDR brachytherapy simulations", Brachytherapy (2021) [(link)](https://doi.org/10.1016/j.brachy.2020.12.007)
